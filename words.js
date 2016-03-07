@@ -11,6 +11,7 @@ var {
   Dimensions,
 } = React;
 var styles=require('./styles');
+var Spinner = require('react-native-spinkit');
 var EventEmitter = require('EventEmitter');
 var SegmentedView = require('./segmented');
 
@@ -39,7 +40,7 @@ var Icon = require('react-native-vector-icons/FontAwesome');
 var data = [];
 var eventEmitter = new EventEmitter();
 var Subscribable = require('Subscribable');
-function convertLanguage(lang){
+function encodeLanguage(lang){
   switch(lang){
     case 'Italian':return 'it';
     case 'German':return 'de';
@@ -48,8 +49,17 @@ function convertLanguage(lang){
     default:return 'it';
   }
 }
+function decodeLanguage(lang){
+  switch(lang){
+    case 'it':return 'Italian';
+    case 'de':return 'German';
+    case 'fr':return 'French';
+    case 'es':return 'Spanish';
+    default:return 'Italian';
+  }
+}
 function fetchWord(language,nwords){
-  return fetch('https://quickvocab.clubsmatter.com/api/word?language='+convertLanguage(language)+'&nwords='+nwords);
+  return fetch('https://quickvocab.clubsmatter.com/api/word?language='+encodeLanguage(language)+'&nwords='+nwords);
 }
 
 function nextWord(){
@@ -115,8 +125,8 @@ var WordPage = React.createClass({
 
     var d = this.state.data;
     if(d==null){
-      return <View style={{flex:1}}>
-          <Text style={styles.word}>Loading...</Text>
+      return <View style={{flex:1,alignItems:'center',justifyContent:'center',marginBottom:100}}>
+          <Spinner isVisible={true} size={100} type={'ThreeBounce'} color={'#E91E63'}/>
         </View>
     }
 
@@ -157,6 +167,7 @@ var WordPage = React.createClass({
 
     return (
       <View style={{flex:1,paddingBottom:100}}>
+        <Text style={{textAlign:'right',fontSize:12,marginRight:20,marginTop:40,color:'#9C27B0'}}>{decodeLanguage(d.language)}</Text>
         <Text style={styles.word}>{d.word}</Text>
 
         <SegmentedView
@@ -219,7 +230,7 @@ var Words = React.createClass({
         
         <View style={styles.footer}>
           <TouchableOpacity onPress={this._next}>
-            <Text style={styles.buttonText}>Next Word</Text>
+            <Text style={styles.buttonText}>Next</Text>
           </TouchableOpacity>
         </View>
       </View>

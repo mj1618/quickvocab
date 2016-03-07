@@ -59,17 +59,21 @@ var styles = StyleSheet.create({
     fontSize: 24,
     color:'white'
   },
+  option:{
+    fontSize:16,
+    marginTop:10
+  },
   settingsText: {
     textAlign:'right',
     fontSize: 16,
-    marginTop:14,
+    marginTop:16,
     marginRight:10,
     color:'white',
   },
   backText: {
     textAlign:'left',
     fontSize: 16,
-    marginTop:14,
+    marginTop:16,
     marginLeft:10,
     color:'white',
   },
@@ -77,7 +81,7 @@ var styles = StyleSheet.create({
     fontSize: 30,
     textAlign: 'center',
     margin:50,
-    marginTop:70,
+    marginTop:40,
     color: 'black',
   },
   translation: {

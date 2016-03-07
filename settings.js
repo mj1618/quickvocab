@@ -77,29 +77,29 @@ var SettingsPage = React.createClass({
           <Text style={styles.backText}>Back</Text>
         </TouchableOpacity>
 
-        <View style={{padding:20,marginTop:60}}>
+        <View style={{padding:20,marginTop:20}}>
 
         	<Text style={{fontSize:24,paddingBottom:10,textAlign:'left',fontWeight:'bold'}}>Select a Language:</Text>
 	        <TouchableOpacity onPress={ () => that._language('Italian') }>
-	        	<Text style={{fontSize:16}}>
+	        	<Text style={styles.option}>
 	        		{italianIcon}
 	        		Italian
         		</Text>
     		</TouchableOpacity>
 	        <TouchableOpacity onPress={ () => that._language('German') }>
-	        	<Text style={{fontSize:16}}>
+	        	<Text style={styles.option}>
 		        	{germanIcon}
 	        		German
         		</Text>
     		</TouchableOpacity>
 	        <TouchableOpacity onPress={ () => that._language('French') }>
-	        	<Text style={{fontSize:16}}>
+	        	<Text style={styles.option}>
 		        	{frenchIcon}
 	        		French
         		</Text>
     		</TouchableOpacity>
 	        <TouchableOpacity onPress={ () => that._language('Spanish') }>
-	        	<Text style={{fontSize:16}}>
+	        	<Text style={styles.option}>
 		        	{spanishIcon}
 	        		Spanish
         		</Text>
@@ -109,7 +109,7 @@ var SettingsPage = React.createClass({
         	<Text style={{fontSize:24,paddingBottom:5,textAlign:'left',fontWeight:'bold'}}>How many words?</Text>
           <Text style={{fontSize:12,paddingBottom:10,textAlign:'left'}}>The app chooses the most frequent words in the language, choose how many of the top words the app should choose from.</Text>
         	<TouchableOpacity onPress={ () => that._nwords(100) }>
-	        	<Text style={{fontSize:16}}>
+	        	<Text style={styles.option}>
 	        		{that.state.nwords==100 ? 
   						<Icon name="check"  size={20} color='#000000' /> 
   						: <Icon name="check"  size={20} color='#fff' />}
@@ -117,7 +117,7 @@ var SettingsPage = React.createClass({
         		</Text>
     		</TouchableOpacity>
 	        <TouchableOpacity onPress={ () => that._nwords(1000) }>
-	        	<Text style={{fontSize:16}}>
+	        	<Text style={styles.option}>
 	        		{that.state.nwords==1000 ? 
   						<Icon name="check"  size={20} color='#000000' /> 
   						: <Icon name="check"  size={20} color='#fff' />}
@@ -125,7 +125,7 @@ var SettingsPage = React.createClass({
         		</Text>
     		</TouchableOpacity>
     		<TouchableOpacity onPress={ () => that._nwords(10000) }>
-	        	<Text style={{fontSize:16}}>
+	        	<Text style={styles.option}>
 	        		{that.state.nwords==10000 ? 
   						<Icon name="check"  size={20} color='#000000' /> 
   						: <Icon name="check"  size={20} color='#fff' />}
@@ -133,7 +133,7 @@ var SettingsPage = React.createClass({
         		</Text>
     		</TouchableOpacity>
     		<TouchableOpacity onPress={ () => that._nwords(100000) }>
-	        	<Text style={{fontSize:16}}>
+	        	<Text style={styles.option}>
 	        		{that.state.nwords==100000 ? 
   						<Icon name="check"  size={20} color='#000000' /> 
   						: <Icon name="check"  size={20} color='#fff' />}
