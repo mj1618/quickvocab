@@ -34,7 +34,7 @@ var SettingsPage = React.createClass({
   	});
   	store.get('nwords').then((nwords)=>{
 		this.setState({
-	  		nwords:nwords==null?100:parseInt(nwords)
+	  		nwords:nwords==null?1000:parseInt(nwords)
 	  	});
   	});
   },

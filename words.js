@@ -55,6 +55,8 @@ function fetchWord(language,nwords){
 function nextWord(){
   return store.get('language').then((language)=>{
     return store.get('nwords').then((nwords)=>{
+      if(language==null)language='Italian';
+      if(nwords==null)nwords=1000;
       fetchWord(language,nwords)
         .then( res => {
           return res.json();
