@@ -133,6 +133,7 @@ var WordPage = React.createClass({
         content = 
           <View style={styles.content}>
             {this.state.data.meanings.map( (t,i) => {
+              
               return <View key={i}>
                   <Text style={styles.translation}><Icon name="circle"  size={8} color='#000000' /> {decode(t)}</Text>
                 </View>;
