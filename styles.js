@@ -23,10 +23,9 @@ var styles = StyleSheet.create({
     left: 0, 
     right: 0, 
     top: 0,
-    paddingVertical: 10, 
     height:55, 
     paddingHorizontal: 20, 
-    backgroundColor: '#ff9800'
+    backgroundColor: '#2196f3'
   },
   footer:{
     position: 'absolute', 
@@ -36,7 +35,8 @@ var styles = StyleSheet.create({
     paddingVertical: 10, 
     paddingHorizontal: 20,
     margin:20, 
-    backgroundColor: '#2196f3'
+
+    backgroundColor: '#ff9800'
   },
   container: {
     backgroundColor: '#fff'

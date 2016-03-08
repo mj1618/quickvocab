@@ -4,6 +4,7 @@ var {
   AppRegistry,
   StyleSheet,
   Text,
+  Image,
   View,
   Navigator,
   TouchableOpacity,
@@ -166,8 +167,12 @@ var WordPage = React.createClass({
     }
 
     return (
-      <View style={{flex:1,paddingBottom:100}}>
-        <Text style={{textAlign:'right',fontSize:12,marginRight:20,marginTop:40,color:'#9C27B0'}}>{decodeLanguage(d.language)}</Text>
+      <View style={{flex:1,paddingBottom:100,marginTop:20}}>
+        <View style={{marginTop:10,paddingHorizontal:10}}>
+          <Image style={{width:50,height:50}} source={require('./logo.png')} />
+          <Text style={{textAlign:'right',position:'absolute',top:10,right:20,fontSize:12,color:'#9C27B0'}}>{decodeLanguage(d.language)}</Text>          
+        </View>
+
         <Text style={styles.word}>{d.word}</Text>
 
         <SegmentedView
@@ -215,7 +220,6 @@ var Words = React.createClass({
   render() {
     return (
       <View style={styles.wrapper}>
-
         <View style={styles.header}>
           <Text style={styles.headerText}>QuickVocab</Text>
         </View>
