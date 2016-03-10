@@ -62,4 +62,4 @@ var QuickVocab = React.createClass({
 
 AppRegistry.registerComponent('quickvocab', () => QuickVocab);
 
-module.exports = QuickVocab;
+module.exports = QuickVocab;  
